@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
 
+# Student
+
+- Nom: Mathieu SIAUD
+- Classe: M2 IW
+- Expérience en Angular : Première fois, jamais utilisé
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
