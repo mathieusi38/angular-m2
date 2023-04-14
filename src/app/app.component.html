@@ -3,10 +3,22 @@
 
 <mat-sidenav-container>
   <mat-sidenav class="mat-elevation-z8" opened mode="side">
-    <a routerLink="login">
+    <a routerLink="login" *ngIf="!authService.userData">
       <button mat-button class="menu-button">
-          <mat-icon>home</mat-icon>
-          <span>Login</span>
+          <mat-icon>login</mat-icon>
+          <span>Connexion</span>
+      </button>
+    </a>
+    <a routerLink="register" *ngIf="!authService.userData">
+      <button mat-button class="menu-button">
+          <mat-icon>login</mat-icon>
+          <span>Inscription</span>
+      </button>
+    </a>
+    <a (click)="authService.logout()" *ngIf="authService.userData">
+      <button mat-button class="menu-button">
+          <mat-icon>logout</mat-icon>
+          <span>Déconnexion</span>
       </button>
     </a>
     <a routerLink="/">

@@ -26,9 +26,8 @@ export class AuthService {
       (response) => {
         if (response) {
           console.log('response', response);
-          this.userData = response;
+          this.userData = response.user;
           localStorage.setItem('user', JSON.stringify(this.userData));
-          JSON.parse(localStorage.getItem('user')!);
           this.router.navigate(['/']);
         }
       },
@@ -43,6 +42,9 @@ export class AuthService {
       (response) => {
         if (response) {
           console.log('response', response);
+          this.userData = response.user;
+          localStorage.setItem('user', JSON.stringify(this.userData));
+          this.router.navigate(['/']);
         }
       },
       (error) => {
@@ -53,7 +55,8 @@ export class AuthService {
 
   logout() {
     signOut(this.fireAuth).then(() => {
-      this.router.navigate(['/']);
+      localStorage.removeItem("user");
+      this.router.navigate(['login']);
     });
   }
 

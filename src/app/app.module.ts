@@ -21,13 +21,15 @@ import { AppService } from './app.services';
 import { HttpClientModule} from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SuperheroesComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

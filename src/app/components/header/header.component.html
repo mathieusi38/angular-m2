@@ -1,4 +1,7 @@
 <mat-toolbar color="primary">
     <span>SuperHero</span>
     <span class="example-spacer"></span>
+    <p *ngIf="authService.userData as user">
+          {{user.email }}
+      </p>
 </mat-toolbar>
