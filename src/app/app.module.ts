@@ -24,6 +24,7 @@ import { environment } from '../environments/environment';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RawgService } from './services/rawg.services';
+import { DevelopersComponent } from './components/developers/developers.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RawgService } from './services/rawg.services';
     HeaderComponent,
     GamesComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DevelopersComponent
   ],
   imports: [
     BrowserModule,

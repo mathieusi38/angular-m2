@@ -11,7 +11,7 @@ export class RawgService {
   getTopGames(type: string, page: number, page_size: number): Observable<Result[]> {
 
     let token = environment.rawgKey;
-    let url = 'https://api.rawg.io/api/games?key=' + token + '&page=' + page + '&page_size=' + page_size + '&ordering=-suggestions_count';
+    let url = 'https://api.rawg.io/api/'+ type + '?key=' + token + '&page=' + page + '&page_size=' + page_size + '&ordering=-suggestions_count';
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
     })
