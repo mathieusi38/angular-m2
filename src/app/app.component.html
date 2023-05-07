@@ -27,14 +27,16 @@
           <span>Accueil</span>
       </button>
     </a>
+    <a routerLink="/games">
     <button mat-button class="menu-button">
       <mat-icon>home</mat-icon>
-      <span>Super héros</span>
+      <span>Top 10 jeux</span>
     </button>
+    </a>
 
   </mat-sidenav>
   <mat-sidenav-content>
-      <div class="content mat-elevation-z8">
+      <div class="container">
         <router-outlet></router-outlet>
       </div>
   </mat-sidenav-content>

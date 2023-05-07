@@ -17,3 +17,7 @@ mat-sidenav-container {
     justify-content: flex-start;
     font-size: 1rem;
 }
+
+.container {
+    margin: 30px;
+}

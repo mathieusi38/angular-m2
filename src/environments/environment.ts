@@ -10,6 +10,7 @@ export const environment = {
       apiKey: 'AIzaSyA8M5gErN2uTfb1relnMr_v1K_mJdoiez4',
       authDomain: 'angular-m2.firebaseapp.com',
       messagingSenderId: '552995639002',
-    }
+    },
+    rawgKey: '63607a7f4d154b58b28be59bc38d1751',
 };
   

@@ -13,21 +13,23 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table'; 
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SuperheroesComponent } from './components/superheroes/superheroes.component';
-import { AppService } from './app.services';
+import { GamesComponent } from './components/games/games.component';
 import { HttpClientModule} from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RawgService } from './services/rawg.services';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SuperheroesComponent,
+    GamesComponent,
     LoginComponent,
     RegisterComponent
   ],
@@ -44,10 +46,12 @@ import { RegisterComponent } from './components/register/register.component';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
-  providers: [AppService],
+  providers: [RawgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
