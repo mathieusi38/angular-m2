@@ -3,6 +3,7 @@ import { RawgService } from '../../services/rawg.services';
 import { BehaviorSubject, combineLatest, filter, map, Observable, switchMap, tap } from 'rxjs';
 import { Games, Result } from 'src/app/models/interfaces';
 import { Router } from '@angular/router';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-superheroes',
@@ -10,21 +11,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent {
-  games: Observable<Result[]>;
+  games: any;
   console = console;
   readonly page = new BehaviorSubject<number>(0);
   type: string = 'games';
   count: number = 0;
   per_page: number = 10;
+  tableSize: number = 10;
   displayedColumns: string[] = ['name', 'released'];
 
 
   constructor(private router: Router, private RawgService: RawgService) { 
-    this.games = this.RawgService.getTopGames(this.type, 1, this.per_page);
+    //this.games = this.RawgService.getTopGames(this.type, 1, this.per_page);
+
+    this.games = combineLatest([this.page, this.type]).pipe(
+      switchMap(([page, type]) => {
+        return this.RawgService.getTopGames(this.type, page + 1, this.per_page).pipe(
+          tap((data => {
+            this.count = data.count
+          })),
+          map((r) => r.results)
+        );
+      })
+    
+    );
 
     
   }
 
 
+  onTableDataChange(event: PageEvent) {
+    this.page.next(event.pageIndex);
+  }
 
 }

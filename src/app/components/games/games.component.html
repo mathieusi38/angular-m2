@@ -1,7 +1,5 @@
 
-{{ console.log(( games | async )) }}
-
-<h1>Top 10 jeux</h1>
+<h1>Top jeux</h1>
 <table mat-table [dataSource]="games" class="mat-elevation-z8">
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -17,3 +15,10 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
+
+<mat-paginator
+               (page)="onTableDataChange($event)"
+               [length]="count"
+               [pageSize]="tableSize"
+               [pageIndex]="( page | async )">
+</mat-paginator>

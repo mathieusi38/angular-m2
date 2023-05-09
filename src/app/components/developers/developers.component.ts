@@ -11,7 +11,7 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./developers.component.css']
 })
 export class DevelopersComponent {
-  games: Observable<Result[]>;
+  games: any;
   console = console;
   readonly page = new BehaviorSubject<number>(0);
   type: string = 'developers';
@@ -26,8 +26,9 @@ export class DevelopersComponent {
       switchMap(([page, type]) => {
         return this.RawgService.getTopGames(this.type, page + 1, this.per_page).pipe(
           tap((data => {
-            this.count = data.length;
-          }))
+            this.count = data.count
+          })),
+          map((r) => r.results)
         );
       })
     
