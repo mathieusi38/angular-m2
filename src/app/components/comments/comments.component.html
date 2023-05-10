@@ -1,0 +1,7 @@
+<button mat-raised-button (click)="newComment()">Add comment</button>
+
+<mat-card *ngFor="let comment of comments">
+    <mat-card-content>{{comment.title}}</mat-card-content>
+</mat-card>
+
+  

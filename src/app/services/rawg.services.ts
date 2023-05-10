@@ -7,10 +7,22 @@ import { Games } from '../models/interfaces';
 export class RawgService {
   constructor(private http: HttpClient) { }
 
-  getTopGames(type: string, page: number, page_size: number) {
+  getRawgData(type: string, page: number, page_size: number, ordering: string = 'rating') {
 
     let token = environment.rawgKey;
-    let url = 'https://api.rawg.io/api/'+ type + '?key=' + token + '&page=' + page + '&page_size=' + page_size + '&ordering=-suggestions_count';
+    let url = 'https://api.rawg.io/api/'+ type + '?key=' + token + '&page=' + page + '&page_size=' + page_size + '&ordering=' + ordering;
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    
+   return this.http.get<Games>(url, {headers: headers});
+
+  }
+
+  getGameInfo(id: number) {
+
+    let token = environment.rawgKey;
+    let url = 'https://api.rawg.io/api/games/' + id + '?key=' + token;
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
     })

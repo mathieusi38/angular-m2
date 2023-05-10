@@ -15,6 +15,7 @@ export class DevelopersComponent {
   console = console;
   readonly page = new BehaviorSubject<number>(0);
   type: string = 'developers';
+  ordering: string = '-rating';
   count: number = 0;
   per_page: number = 10;
   tableSize: number = 10;
@@ -24,7 +25,7 @@ export class DevelopersComponent {
   constructor(private router: Router, private RawgService: RawgService) { 
     this.games = combineLatest([this.page, this.type]).pipe(
       switchMap(([page, type]) => {
-        return this.RawgService.getTopGames(this.type, page + 1, this.per_page).pipe(
+        return this.RawgService.getRawgData(this.type, page + 1, this.per_page, this.ordering).pipe(
           tap((data => {
             this.count = data.count
           })),
@@ -33,10 +34,6 @@ export class DevelopersComponent {
       })
     
     );
-
-    // this.RawgService.getTopGames(this.type, page + 1, this.per_page)).tap((data) => {
-    //   this.count = data.count;
-    // }), 
     
   }
 

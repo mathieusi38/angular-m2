@@ -149,3 +149,8 @@ export interface Store {
     id:    number;
     store: Genre;
 }
+
+export interface Comment {
+    title: string;
+    description: string;
+}

@@ -1,6 +1,17 @@
 
 <h1>Top jeux</h1>
+
 <table mat-table [dataSource]="games" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="details">
+    <th mat-header-cell *matHeaderCellDef> Details </th>
+    <td mat-cell *matCellDef="let element"> 
+      <a routerLink="/games/{{element.id}}" >
+      	<mat-icon>launch</mat-icon> 
+      </a>
+    </td>
+  </ng-container>
+
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
@@ -10,6 +21,16 @@
         <th mat-header-cell *matHeaderCellDef> Released </th>
         <td mat-cell *matCellDef="let element"> {{element.released}} </td>
     </ng-container>
+
+    <ng-container matColumnDef="rating">
+      <th mat-header-cell *matHeaderCellDef> Rating </th>
+      <td mat-cell *matCellDef="let element"> {{element.rating}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ratingCount">
+    <th mat-header-cell *matHeaderCellDef> Rating count </th>
+    <td mat-cell *matCellDef="let element"> {{element.ratings_count}} </td>
+</ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
