@@ -151,6 +151,7 @@ export interface Store {
 }
 
 export interface Comment {
+    id?: string;
     title: string;
     description: string;
 }

@@ -20,6 +20,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select'; 
 import {MatDialogModule} from '@angular/material/dialog'; 
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -52,6 +53,7 @@ import { CommentDialogComponent } from './components/comment-dialog/comment-dial
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatGridListModule,
     MatSidenavModule,
     BrowserAnimationsModule,
     HttpClientModule,

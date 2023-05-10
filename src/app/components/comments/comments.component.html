@@ -1,7 +1,14 @@
 <button mat-raised-button (click)="newComment()">Add comment</button>
 
-<mat-card *ngFor="let comment of comments">
-    <mat-card-content>{{comment.title}}</mat-card-content>
-</mat-card>
-
-  
+<mat-grid-list cols="2" rowHeight="2:1">
+    {{console.log(comments)}}
+    <mat-grid-tile *ngFor="let comment of comments">
+        <mat-card class="customCard">
+            <button mat-button class="menu-button" (click)="deleteComment(comment.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <mat-card-title>{{comment.title}}</mat-card-title>
+            <mat-card-content>{{comment.description}}</mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

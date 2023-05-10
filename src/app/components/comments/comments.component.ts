@@ -36,8 +36,11 @@ export class CommentsComponent {
         return;
       }
       addDoc(collection(this.store, 'comments'), result.comments);
-   // this.store.collection('comments').add(result.comments);
     });
+  }
+
+  deleteComment(id: string) {
+    this.CommentsService.deleteComment(id);
   }
 
 
