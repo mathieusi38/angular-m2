@@ -7,6 +7,7 @@ import { Firestore, provideFirestore,getFirestore } from '@angular/fire/firestor
 import { ReactiveFormsModule  } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
+import { LimitCharacterPipe} from './pipes/limit-character.pipe'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -33,7 +34,7 @@ import { RawgService } from './services/rawg.services';
 import { DevelopersComponent } from './components/developers/developers.component';
 import { GameInfoComponent } from './components/game-info/game-info.component';
 import { CommentsComponent } from './components/comments/comments.component';
-import { CommentDialogComponent } from './components/comment-dialog/comment-dialog.component';
+import { CommentDialogComponent } from './components/comment-dialog/comment-dialog.component'; 
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { CommentDialogComponent } from './components/comment-dialog/comment-dial
     DevelopersComponent,
     GameInfoComponent,
     CommentsComponent,
-    CommentDialogComponent
+    CommentDialogComponent,
+    LimitCharacterPipe,
   ],
   imports: [
     BrowserModule,
