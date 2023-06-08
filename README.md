@@ -39,6 +39,11 @@ L'API de rawg.io permet de récupérer beaucoup d'informations sur les jeux vid�
 -  `assets` : Dossier contenant les assets de l'application
 - `pipes` : Dossier contenant les pipes custom de l'application
 
+## Choix de librairies
+
+- `Angular Material` : Librairie de composants pour Angular qui permet de gagner du temps sur le développement de l'application et d'avoir une application réactive
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
