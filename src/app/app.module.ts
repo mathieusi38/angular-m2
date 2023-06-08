@@ -32,7 +32,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RawgService } from './services/rawg.services';
 import { DevelopersComponent } from './components/developers/developers.component';
-import { GameInfoComponent } from './components/game-info/game-info.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { CommentDialogComponent } from './components/comment-dialog/comment-dialog.component'; 
 
@@ -44,7 +43,6 @@ import { CommentDialogComponent } from './components/comment-dialog/comment-dial
     LoginComponent,
     RegisterComponent,
     DevelopersComponent,
-    GameInfoComponent,
     CommentsComponent,
     CommentDialogComponent,
     LimitCharacterPipe,

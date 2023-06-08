@@ -3,15 +3,6 @@
 
 <table mat-table [dataSource]="games" class="mat-elevation-z8">
 
-  <ng-container matColumnDef="details">
-    <th mat-header-cell *matHeaderCellDef> Details </th>
-    <td mat-cell *matCellDef="let element"> 
-      <a routerLink="/games/{{element.id}}" >
-      	<mat-icon>launch</mat-icon> 
-      </a>
-    </td>
-  </ng-container>
-
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>

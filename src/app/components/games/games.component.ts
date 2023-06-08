@@ -19,7 +19,7 @@ export class GamesComponent {
   count: number = 0;
   per_page: number = 10;
   tableSize: number = 10;
-  displayedColumns: string[] = ['details','name', 'released', 'rating', 'ratingCount'];
+  displayedColumns: string[] = ['name', 'released', 'rating', 'ratingCount'];
 
 
   constructor(private router: Router, private RawgService: RawgService) { 
